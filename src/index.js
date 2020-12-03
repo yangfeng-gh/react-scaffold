@@ -3,10 +3,30 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import Home from './pages/Home';
+import JSwiper from './pages/jswiper/JSwiper';
+import RSwiper from './pages/rswiper/RSwiper';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/app">
+          <App />
+        </Route>
+        <Route path="/jswiper">
+          <JSwiper />
+        </Route>
+        <Route path="/rswiper">
+          <RSwiper />
+        </Route>
+      </Switch>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
